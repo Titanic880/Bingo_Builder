@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-using System;
-using System.Collections;
+﻿using System;
 
 namespace Bingo_Card_Generator
 {
@@ -14,7 +12,7 @@ namespace Bingo_Card_Generator
         public string Image_Path
         {
             get { return image_path; }
-            set => image_path = Environment.CurrentDirectory + "\\Images\\" + value;
+            set => image_path = Json_Manager.Directory_POS + "\\Images\\" + value;
         }
         private string image_path;
 

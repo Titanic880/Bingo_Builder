@@ -1,13 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System;
 
 namespace Bingo_Card_Generator
 {
@@ -23,8 +17,7 @@ namespace Bingo_Card_Generator
 
         private void BtnImageFind_Click(object sender, EventArgs e)
         {
-            if(!Directory.Exists("/Images"))
-                Directory.CreateDirectory("Images");
+
             
             OpenFileDialog ofd = new();
             ofd.InitialDirectory = "C:/";
@@ -45,11 +38,13 @@ namespace Bingo_Card_Generator
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    using StreamWriter sr = File.AppendText(Json_Manager.Directory_POS + "ERRORS");
+                    sr.Write($"ERROR POS: BtnImageFind Event (Tile_Create Form), Reason: {ex}");
                     return;
                 }
                 //Copies to local folder for use
-                if(!ofd.FileName.StartsWith($"{Environment.CurrentDirectory}\\Images\\"))
-                    File.Copy(ofd.FileName, $"{Environment.CurrentDirectory}\\Images\\{ofd.FileName.Split("\\")[^1]}");
+                if(!ofd.FileName.StartsWith($"{Json_Manager.Directory_POS}\\Images\\"))
+                    File.Copy(ofd.FileName, $"{Json_Manager.Directory_POS}\\Images\\{ofd.FileName.Split("\\")[^1]}");
                 TbImage.Text = ofd.FileName.Split("\\")[^1];
 
             }

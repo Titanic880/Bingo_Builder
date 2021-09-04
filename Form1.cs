@@ -1,14 +1,6 @@
 ﻿using System.Windows.Forms;
-using System;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace Bingo_Card_Generator
 {
@@ -22,7 +14,7 @@ namespace Bingo_Card_Generator
             Json_Manager.INIT();
             card = new();
 #if !DEBUG
-            if (!File.Exists(Json_Manager.Tile_File_Name) || Json_Manager.Data_Made_Session)
+            if (!File.Exists(Json_Manager.Tile_File_Name))
             {
                 DialogResult dr = MessageBox.Show("Prebuilt tiles are missing, Would you like to regenerate them?","Missing Data",MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)

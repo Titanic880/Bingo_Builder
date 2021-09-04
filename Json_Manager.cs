@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Linq;
 using System.IO;
 using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bingo_Card_Generator
 {
@@ -12,15 +10,19 @@ namespace Bingo_Card_Generator
     {
         public const string Tile_File_Name = "TILE_JSON_DATA.json";
         public const string Card_File_Name = "CARD_JSON_DATA.json";
-        public static bool Data_Made_Session = false;
+        public static readonly string Directory_POS = $"C:\\Users\\{Environment.UserName}\\Bingo_Generator";
 
+        /// <summary>
+        /// Checks all files/Folders related to the project
+        /// </summary>
         public static void INIT()
         {
-            if (!File.Exists(Tile_File_Name))
-            {
-                File.Create(Tile_File_Name).Close();
-                Data_Made_Session = true;
-            }
+            if (!File.Exists(Directory_POS + Tile_File_Name))
+                File.Create(Directory_POS + Tile_File_Name).Close();
+            if(!File.Exists(Directory_POS + Card_File_Name))
+                File.Create(Directory_POS + Card_File_Name).Close();
+            if (!Directory.Exists(Directory_POS + "/Images"))
+                Directory.CreateDirectory(Directory_POS + "/Images");
         }
         public static Tile GetTile(string Name)
         {
@@ -34,10 +36,10 @@ namespace Bingo_Card_Generator
 
         public static Tile[] GetTiles()
         {
-            if (File.ReadAllText(Tile_File_Name) == null || File.ReadAllText(Tile_File_Name).Trim() == "")
+            if (File.ReadAllText(Directory_POS + Tile_File_Name) == null || File.ReadAllText(Directory_POS + Tile_File_Name).Trim() == "")
                 return null;
 
-            using StreamReader sr = File.OpenText(Tile_File_Name);
+            using StreamReader sr = File.OpenText(Directory_POS + Tile_File_Name);
             JsonSerializer serializer = new();
             return (Tile[])serializer.Deserialize(sr, typeof(Tile[]));
         }
@@ -49,19 +51,21 @@ namespace Bingo_Card_Generator
             try
             {
                 List<Tile> tiles;
-                if (File.ReadAllText(Tile_File_Name).Trim() != "")
+                if (File.ReadAllText(Directory_POS + Tile_File_Name).Trim() != "")
                     tiles = GetTiles().ToList();
                 else
                     tiles = new List<Tile>();
                 if (!tiles.Contains(til))
                 {
                     tiles.Add(til);
-                    using StreamWriter sw = new(Tile_File_Name);
+                    using StreamWriter sw = new(Directory_POS + Tile_File_Name);
                     sw.Write(JsonConvert.SerializeObject(tiles, Formatting.Indented));
                 }
             }
-            catch (Exception ex)
-            { 
+            catch (Exception _ex)
+            {
+                using StreamWriter sr = File.AppendText(Directory_POS + "ERRORS");
+                sr.Write($"ERROR POS: AddTile Method, Reason: {_ex}");
                 return false;
             }
 
@@ -69,22 +73,8 @@ namespace Bingo_Card_Generator
         }
 
         public static bool Save_Card(Card card)
-        {
-            try
-            {
-                string[] files = Directory.GetFiles(Environment.CurrentDirectory);
-                int count = 0;
-                foreach (string a in files)
-                    if (a.StartsWith("Card_"))
-                        count++;
-                using StreamWriter sw = new($"Card_{count}");
-                sw.Write(JsonConvert.SerializeObject(card, Formatting.Indented));
-            }
-            catch //(Exception ex)
-            {
-                return false;
-            }
-            return true;
+        { //REBUILD BEFORE USE
+            throw new NotImplementedException();
         }
         public static void Generate_Default()
         {

@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Text;
-using System;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 
 namespace Bingo_Card_Generator
 {
@@ -31,9 +26,7 @@ namespace Bingo_Card_Generator
 
         public bool Add_Tile(Tile tile)
         {
-            if (Unset_Tiles == null 
-                || tile == null 
-                || Unset_Tiles.Length == 25)
+            if (Unset_Tiles == null || tile == null || Unset_Tiles.Length == 25)
                 return false;
             foreach (Tile a in Unset_Tiles)
                 if (tile == a)
