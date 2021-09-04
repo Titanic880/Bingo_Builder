@@ -55,7 +55,7 @@ namespace Bingo_Card_Generator
             this.TbName.Location = new System.Drawing.Point(29, 36);
             this.TbName.Name = "TbName";
             this.TbName.Size = new System.Drawing.Size(129, 23);
-            this.TbName.TabIndex = 1;
+            this.TbName.TabIndex = 0;
             // 
             // LblDesc
             // 
@@ -80,14 +80,14 @@ namespace Bingo_Card_Generator
             this.TbImage.Location = new System.Drawing.Point(29, 202);
             this.TbImage.Name = "TbImage";
             this.TbImage.Size = new System.Drawing.Size(100, 23);
-            this.TbImage.TabIndex = 5;
+            this.TbImage.TabIndex = 2;
             // 
             // RtbDesc
             // 
             this.RtbDesc.Location = new System.Drawing.Point(29, 83);
             this.RtbDesc.Name = "RtbDesc";
             this.RtbDesc.Size = new System.Drawing.Size(129, 96);
-            this.RtbDesc.TabIndex = 6;
+            this.RtbDesc.TabIndex = 1;
             this.RtbDesc.Text = "";
             // 
             // BtnImageFind
@@ -95,7 +95,7 @@ namespace Bingo_Card_Generator
             this.BtnImageFind.Location = new System.Drawing.Point(135, 202);
             this.BtnImageFind.Name = "BtnImageFind";
             this.BtnImageFind.Size = new System.Drawing.Size(23, 23);
-            this.BtnImageFind.TabIndex = 7;
+            this.BtnImageFind.TabIndex = 4;
             this.BtnImageFind.Text = "...";
             this.BtnImageFind.UseVisualStyleBackColor = true;
             this.BtnImageFind.Click += new System.EventHandler(this.BtnImageFind_Click);
@@ -115,14 +115,14 @@ namespace Bingo_Card_Generator
             this.CombDiff.Location = new System.Drawing.Point(29, 246);
             this.CombDiff.Name = "CombDiff";
             this.CombDiff.Size = new System.Drawing.Size(129, 23);
-            this.CombDiff.TabIndex = 9;
+            this.CombDiff.TabIndex = 5;
             // 
             // BtnAdd
             // 
             this.BtnAdd.Location = new System.Drawing.Point(29, 275);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(129, 23);
-            this.BtnAdd.TabIndex = 10;
+            this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Finish Tile";
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);

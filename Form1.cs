@@ -19,16 +19,17 @@ namespace Bingo_Card_Generator
         public Form1()
         {
             InitializeComponent();
-            Load_Tiles();
+            Json_Manager.INIT();
             card = new();
 #if !DEBUG
-            if (!File.Exists(Json_Manager.Tile_File_Name))
+            if (!File.Exists(Json_Manager.Tile_File_Name) || Json_Manager.Data_Made_Session)
             {
                 DialogResult dr = MessageBox.Show("Prebuilt tiles are missing, Would you like to regenerate them?","Missing Data",MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                     Json_Manager.Generate_Default();
             }
 #endif
+            Load_Tiles();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace Bingo_Card_Generator
             for(int i = 0; i < 5; i++)
                 for (int x = 0; x < 5; x++)
                 {
-                    ((PictureBox)BingoGroup.Controls[i + x]).Image = card.Set_Tiles[i][x].BitImage;
+                    ((PictureBox)BingoGroup.Controls[i + x]).Image = new Bitmap(card.Set_Tiles[i][x].Image_Path);
                     ((PictureBox)BingoGroup.Controls[i + x]).Tag = card.Set_Tiles[i][x];
                 }
             

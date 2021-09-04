@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Bingo_Card_Generator
 {
@@ -22,6 +23,9 @@ namespace Bingo_Card_Generator
 
         private void BtnImageFind_Click(object sender, EventArgs e)
         {
+            if(!Directory.Exists("/Images"))
+                Directory.CreateDirectory("Images");
+            
             OpenFileDialog ofd = new();
             ofd.InitialDirectory = "C:/";
             ofd.FileName = "Image Find";
@@ -29,6 +33,7 @@ namespace Bingo_Card_Generator
             {
                 try
                 {   
+                    //Tests File Type
                     string Test = ofd.FileName.Split('.')[^1].ToLower();
                     if (Test == "png" || Test == "jpg")
                     {
@@ -42,7 +47,11 @@ namespace Bingo_Card_Generator
                     MessageBox.Show(ex.Message);
                     return;
                 }
-                TbImage.Text = ofd.FileName;
+                //Copies to local folder for use
+                if(!ofd.FileName.StartsWith($"{Environment.CurrentDirectory}\\Images\\"))
+                    File.Copy(ofd.FileName, $"{Environment.CurrentDirectory}\\Images\\{ofd.FileName.Split("\\")[^1]}");
+                TbImage.Text = ofd.FileName.Split("\\")[^1];
+
             }
             else
                 MessageBox.Show("Image Selection Cancelled");
