@@ -63,5 +63,6 @@ namespace Bingo_Card_Generator
             
         }
 
+        private void BtnFolder_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start("Explorer.exe", Json_Manager.Directory_POS);
     }
 }

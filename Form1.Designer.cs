@@ -60,6 +60,7 @@ namespace Bingo_Card_Generator
             this.BtnAddBingo = new System.Windows.Forms.Button();
             this.LstBingoTiles = new System.Windows.Forms.ListBox();
             this.BtnBuild = new System.Windows.Forms.Button();
+            this.BtnFolder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb03)).BeginInit();
@@ -102,9 +103,9 @@ namespace Bingo_Card_Generator
             // 
             this.LstAllTiles.FormattingEnabled = true;
             this.LstAllTiles.ItemHeight = 15;
-            this.LstAllTiles.Location = new System.Drawing.Point(12, 12);
+            this.LstAllTiles.Location = new System.Drawing.Point(12, 42);
             this.LstAllTiles.Name = "LstAllTiles";
-            this.LstAllTiles.Size = new System.Drawing.Size(157, 244);
+            this.LstAllTiles.Size = new System.Drawing.Size(157, 214);
             this.LstAllTiles.TabIndex = 0;
             // 
             // pb01
@@ -399,11 +400,22 @@ namespace Bingo_Card_Generator
             this.BtnBuild.UseVisualStyleBackColor = true;
             this.BtnBuild.Click += new System.EventHandler(this.BtnBuild_Click);
             // 
+            // BtnFolder
+            // 
+            this.BtnFolder.Location = new System.Drawing.Point(12, 12);
+            this.BtnFolder.Name = "BtnFolder";
+            this.BtnFolder.Size = new System.Drawing.Size(157, 23);
+            this.BtnFolder.TabIndex = 601;
+            this.BtnFolder.Text = "Open Storage Folder";
+            this.BtnFolder.UseVisualStyleBackColor = true;
+            this.BtnFolder.Click += new System.EventHandler(this.BtnFolder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 579);
+            this.Controls.Add(this.BtnFolder);
             this.Controls.Add(this.BtnBuild);
             this.Controls.Add(this.LstBingoTiles);
             this.Controls.Add(this.BtnAddBingo);
@@ -475,6 +487,7 @@ namespace Bingo_Card_Generator
         private System.Windows.Forms.Button BtnAddBingo;
         private System.Windows.Forms.ListBox LstBingoTiles;
         private System.Windows.Forms.Button BtnBuild;
+        private System.Windows.Forms.Button BtnFolder;
     }
 }
 
