@@ -12,7 +12,7 @@ namespace Bingo_Card_Generator
         public static readonly string Directory_POS = $"C:\\Users\\{Environment.UserName}\\Bingo_Generator\\";
         public static readonly string Tile_File_Name = Directory_POS + "TILE_JSON_DATA.json";
         public static readonly string Card_File_Name = Directory_POS + "CARD_JSON_DATA.json";
-        public static readonly string Images_Folder_Name = Directory_POS + "Images";
+        public static readonly string Images_Folder_Name = Directory_POS + "Images\\";
         public static readonly string ERROR_FILE = Directory_POS + "Error";
         /// <summary>
         /// Checks all files/Folders related to the project
@@ -46,7 +46,7 @@ namespace Bingo_Card_Generator
         {
             if (File.ReadAllText(Tile_File_Name) == null || File.ReadAllText(Tile_File_Name).Trim() == "")
                 return null;
-
+            
             using StreamReader sr = File.OpenText(Tile_File_Name);
             JsonSerializer serializer = new();
             return (Tile[])serializer.Deserialize(sr, typeof(Tile[]));
@@ -79,6 +79,28 @@ namespace Bingo_Card_Generator
 
             return true;
         }
+        
+        public static bool Replace_Tile(Tile tile)
+        {
+            try
+            {
+
+                Tile[] ar = GetTiles();
+                for (int i = 0; i < ar.Length; i++)
+                    if (ar[i].Name == tile.Name && ar[i].Desc == tile.Desc && ar[i].Difficulty == tile.Difficulty)
+                        ar[i] = tile;
+
+                using StreamWriter sw = new(Tile_File_Name);
+                sw.Write(JsonConvert.SerializeObject(ar, Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                StreamWriter sw = File.AppendText(ERROR_FILE);
+                sw.WriteLine($"ERROR ON REPLACE TILE (NAME: {tile.Name}): "+ex.Message);
+                return false;
+            }
+            return true;
+        }
 
         public static bool Save_Card(Card card)
         { //REBUILD BEFORE USE
@@ -88,8 +110,8 @@ namespace Bingo_Card_Generator
         {
             string[] tiles =
             {
-                @"{ 'Name': 'Test_0','Desc': 'This is a test :D','Difficulty': 0,'Completed': false,'Image_Path': '255,255,255'}",
-                @"{'Name': 'Test_1','Desc': 'This is a 2nd test :D','Difficulty': 1,'Completed': false,'Image_Path': '255,255,255'}"
+                @"{'Name': 'Test_0','Desc': 'This is a test :D','Difficulty': 0,'Completed': false,'Image_Path': '9psumxhi6nm41.jpg'}",
+                @"{'Name': 'Test_1','Desc': 'This is a 2nd test :D','Difficulty': 1,'Completed': false,'Image_Path': 'BabySharkTurtle.jpg'}"
             };
 
             Tile[] ile = new Tile[tiles.Length];

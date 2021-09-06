@@ -37,13 +37,15 @@ namespace Bingo_Card_Generator
 
         private void BtnAddBingo_Click(object sender, EventArgs e)
         {
+            pb01.Image = ((Tile)LstAllTiles.SelectedItem).ByteArrayToImage();
+            /*
             if(!card.Card_Built && card.Tiles_Count == 24)
             {
                 BtnAddBingo.Enabled = false;
                 BtnBuild.Enabled = true;
             }
             if (card.Add_Tile((Tile)LstAllTiles.SelectedItem))
-                MessageBox.Show("Error adding tile. (already have 25 or duplicate)");
+                MessageBox.Show("Error adding tile. (already have 25 or duplicate)");*/
         }
 
         private void BtnBuild_Click(object sender, EventArgs e)

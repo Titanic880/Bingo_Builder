@@ -7,6 +7,8 @@ namespace Bingo_Card_Generator
 {
     public partial class Tile_Create : Form
     {
+        private string image_file;
+        
         public Tile_Create()
         {
             InitializeComponent();
@@ -41,16 +43,15 @@ namespace Bingo_Card_Generator
                     return;
                 }
                 //Copies to local folder for use
-                if(!ofd.FileName.StartsWith(Json_Manager.Images_Folder_Name))
-                    File.Copy(ofd.FileName, $"{Json_Manager.Images_Folder_Name}{ofd.FileName.Split("\\")[^1]}");
                 TbImage.Text = ofd.FileName.Split("\\")[^1];
+                image_file = ofd.FileName;
             }
             else MessageBox.Show("Image Selection Cancelled");
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            Tile tile = new()
+            Tile tile = new(File.ReadAllBytes(image_file))
             {
                 Name = TbName.Text,
                 Desc = RtbDesc.Text,
