@@ -11,17 +11,20 @@ namespace Bingo_Card_Generator
         public Form1()
         {
             InitializeComponent();
+#if !DEBUG
+            BtnAddBingo.Enabled = false;
+            BtnBuild.Enabled = false;
+            LstBingoTiles.Enabled = false;
+            BingoGroup.Enabled = false;
+#endif
             Json_Manager.INIT();
             card = new();
-#if !DEBUG
-            if (!File.Exists(Json_Manager.Tile_File_Name))
-            {
-                DialogResult dr = MessageBox.Show("Prebuilt tiles are missing, Would you like to regenerate them?","Missing Data",MessageBoxButtons.YesNo);
-                if (dr == DialogResult.Yes)
-                    Json_Manager.Generate_Default();
-            }
-#endif
+
             Load_Tiles();
+            Tile[] ar = Json_Manager.GetTiles();
+            if (ar is null) return;
+            pb01.Tag = ar[0];
+            pb01.BackColor = Color.Black;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -39,7 +42,6 @@ namespace Bingo_Card_Generator
                 BtnAddBingo.Enabled = false;
                 BtnBuild.Enabled = true;
             }
-
             if (card.Add_Tile((Tile)LstAllTiles.SelectedItem))
                 MessageBox.Show("Error adding tile. (already have 25 or duplicate)");
         }
@@ -60,9 +62,29 @@ namespace Bingo_Card_Generator
                     ((PictureBox)BingoGroup.Controls[i + x]).Image = new Bitmap(card.Set_Tiles[i][x].Image_Path);
                     ((PictureBox)BingoGroup.Controls[i + x]).Tag = card.Set_Tiles[i][x];
                 }
-            
         }
 
         private void BtnFolder_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start("Explorer.exe", Json_Manager.Directory_POS);
+
+        ToolTip tip;
+        private void PicReset(object sender, EventArgs e) => tip = null;
+        private void PicHover(object sender, EventArgs e)
+        {
+            if (sender is not PictureBox) return;
+            //if (card == null || !card.Card_Built) return;     //Removed for testing of hover
+            Tile tile = (Tile)((PictureBox)sender).Tag;
+            if (tile != null && tip == null)
+            {
+                tip = new();
+                tip.SetToolTip((PictureBox)sender, tile.Desc);
+            }
+        }
+        
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            this.Width = 816;
+            this.Height = 618;
+        }
     }
 }

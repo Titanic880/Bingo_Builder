@@ -12,7 +12,7 @@ namespace Bingo_Card_Generator
         public string Image_Path
         {
             get { return image_path; }
-            set => image_path = Json_Manager.Directory_POS + "\\Images\\" + value;
+            set => image_path = value;
         }
         private string image_path;
 

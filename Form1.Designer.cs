@@ -116,6 +116,8 @@ namespace Bingo_Card_Generator
             this.pb01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb01.TabIndex = 2;
             this.pb01.TabStop = false;
+            this.pb01.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb01.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb02
             // 
@@ -125,6 +127,8 @@ namespace Bingo_Card_Generator
             this.pb02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb02.TabIndex = 3;
             this.pb02.TabStop = false;
+            this.pb02.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb02.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb03
             // 
@@ -134,6 +138,8 @@ namespace Bingo_Card_Generator
             this.pb03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb03.TabIndex = 4;
             this.pb03.TabStop = false;
+            this.pb03.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb03.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb04
             // 
@@ -143,6 +149,8 @@ namespace Bingo_Card_Generator
             this.pb04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb04.TabIndex = 5;
             this.pb04.TabStop = false;
+            this.pb04.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb04.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb05
             // 
@@ -152,6 +160,8 @@ namespace Bingo_Card_Generator
             this.pb05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb05.TabIndex = 6;
             this.pb05.TabStop = false;
+            this.pb05.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb05.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb10
             // 
@@ -161,6 +171,8 @@ namespace Bingo_Card_Generator
             this.pb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb10.TabIndex = 11;
             this.pb10.TabStop = false;
+            this.pb10.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb10.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb09
             // 
@@ -170,6 +182,8 @@ namespace Bingo_Card_Generator
             this.pb09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb09.TabIndex = 10;
             this.pb09.TabStop = false;
+            this.pb09.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb09.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb08
             // 
@@ -179,6 +193,8 @@ namespace Bingo_Card_Generator
             this.pb08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb08.TabIndex = 9;
             this.pb08.TabStop = false;
+            this.pb08.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb08.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb07
             // 
@@ -188,6 +204,8 @@ namespace Bingo_Card_Generator
             this.pb07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb07.TabIndex = 8;
             this.pb07.TabStop = false;
+            this.pb07.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb07.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb06
             // 
@@ -197,6 +215,8 @@ namespace Bingo_Card_Generator
             this.pb06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb06.TabIndex = 7;
             this.pb06.TabStop = false;
+            this.pb06.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb06.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb15
             // 
@@ -206,6 +226,8 @@ namespace Bingo_Card_Generator
             this.pb15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb15.TabIndex = 16;
             this.pb15.TabStop = false;
+            this.pb15.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb15.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb14
             // 
@@ -215,6 +237,8 @@ namespace Bingo_Card_Generator
             this.pb14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb14.TabIndex = 15;
             this.pb14.TabStop = false;
+            this.pb14.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb14.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb13
             // 
@@ -224,6 +248,8 @@ namespace Bingo_Card_Generator
             this.pb13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb13.TabIndex = 14;
             this.pb13.TabStop = false;
+            this.pb13.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb13.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb12
             // 
@@ -233,6 +259,8 @@ namespace Bingo_Card_Generator
             this.pb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb12.TabIndex = 13;
             this.pb12.TabStop = false;
+            this.pb12.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb12.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb11
             // 
@@ -242,6 +270,8 @@ namespace Bingo_Card_Generator
             this.pb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb11.TabIndex = 12;
             this.pb11.TabStop = false;
+            this.pb11.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb11.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb20
             // 
@@ -251,6 +281,8 @@ namespace Bingo_Card_Generator
             this.pb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb20.TabIndex = 21;
             this.pb20.TabStop = false;
+            this.pb20.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb20.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pictureBox17
             // 
@@ -261,6 +293,8 @@ namespace Bingo_Card_Generator
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 20;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pictureBox17.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pictureBox18
             // 
@@ -271,6 +305,8 @@ namespace Bingo_Card_Generator
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 19;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pictureBox18.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pictureBox19
             // 
@@ -281,6 +317,8 @@ namespace Bingo_Card_Generator
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 18;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pictureBox19.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb16
             // 
@@ -290,6 +328,8 @@ namespace Bingo_Card_Generator
             this.pb16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb16.TabIndex = 17;
             this.pb16.TabStop = false;
+            this.pb16.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb16.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb25
             // 
@@ -299,6 +339,8 @@ namespace Bingo_Card_Generator
             this.pb25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb25.TabIndex = 26;
             this.pb25.TabStop = false;
+            this.pb25.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb25.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb24
             // 
@@ -308,6 +350,8 @@ namespace Bingo_Card_Generator
             this.pb24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb24.TabIndex = 25;
             this.pb24.TabStop = false;
+            this.pb24.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb24.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb23
             // 
@@ -317,6 +361,8 @@ namespace Bingo_Card_Generator
             this.pb23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb23.TabIndex = 24;
             this.pb23.TabStop = false;
+            this.pb23.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb23.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb22
             // 
@@ -326,6 +372,8 @@ namespace Bingo_Card_Generator
             this.pb22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb22.TabIndex = 23;
             this.pb22.TabStop = false;
+            this.pb22.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb22.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // pb21
             // 
@@ -335,6 +383,8 @@ namespace Bingo_Card_Generator
             this.pb21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb21.TabIndex = 22;
             this.pb21.TabStop = false;
+            this.pb21.MouseLeave += new System.EventHandler(this.PicReset);
+            this.pb21.MouseHover += new System.EventHandler(this.PicHover);
             // 
             // BingoGroup
             // 
@@ -391,7 +441,6 @@ namespace Bingo_Card_Generator
             // 
             // BtnBuild
             // 
-            this.BtnBuild.Enabled = false;
             this.BtnBuild.Location = new System.Drawing.Point(12, 540);
             this.BtnBuild.Name = "BtnBuild";
             this.BtnBuild.Size = new System.Drawing.Size(157, 23);
@@ -422,8 +471,10 @@ namespace Bingo_Card_Generator
             this.Controls.Add(this.LstAllTiles);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.BingoGroup);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bingo Generator - Tile Generator Only";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb03)).EndInit();
