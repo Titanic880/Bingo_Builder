@@ -32,7 +32,12 @@ namespace Bingo_Card_Generator
             new Tile_Create().ShowDialog();
             Load_Tiles();
         }
-        
+        private void BtnModify_Click(object sender, EventArgs e)
+        {
+            new Tile_Create((Tile)LstAllTiles.SelectedItem).ShowDialog();
+            Load_Tiles();
+        }
+
         private void Load_Tiles() => LstAllTiles.DataSource = Json_Manager.GetTiles();
 
         private void BtnAddBingo_Click(object sender, EventArgs e)

@@ -61,6 +61,7 @@ namespace Bingo_Card_Generator
             this.LstBingoTiles = new System.Windows.Forms.ListBox();
             this.BtnBuild = new System.Windows.Forms.Button();
             this.BtnFolder = new System.Windows.Forms.Button();
+            this.BtnModify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb03)).BeginInit();
@@ -91,7 +92,7 @@ namespace Bingo_Card_Generator
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(12, 262);
+            this.BtnAdd.Location = new System.Drawing.Point(12, 261);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(157, 23);
             this.BtnAdd.TabIndex = 1;
@@ -103,7 +104,7 @@ namespace Bingo_Card_Generator
             // 
             this.LstAllTiles.FormattingEnabled = true;
             this.LstAllTiles.ItemHeight = 15;
-            this.LstAllTiles.Location = new System.Drawing.Point(12, 42);
+            this.LstAllTiles.Location = new System.Drawing.Point(12, 41);
             this.LstAllTiles.Name = "LstAllTiles";
             this.LstAllTiles.Size = new System.Drawing.Size(157, 214);
             this.LstAllTiles.TabIndex = 0;
@@ -422,7 +423,7 @@ namespace Bingo_Card_Generator
             // 
             // BtnAddBingo
             // 
-            this.BtnAddBingo.Location = new System.Drawing.Point(12, 291);
+            this.BtnAddBingo.Location = new System.Drawing.Point(12, 510);
             this.BtnAddBingo.Name = "BtnAddBingo";
             this.BtnAddBingo.Size = new System.Drawing.Size(157, 23);
             this.BtnAddBingo.TabIndex = 2;
@@ -436,7 +437,7 @@ namespace Bingo_Card_Generator
             this.LstBingoTiles.ItemHeight = 15;
             this.LstBingoTiles.Location = new System.Drawing.Point(12, 320);
             this.LstBingoTiles.Name = "LstBingoTiles";
-            this.LstBingoTiles.Size = new System.Drawing.Size(157, 214);
+            this.LstBingoTiles.Size = new System.Drawing.Size(157, 184);
             this.LstBingoTiles.TabIndex = 3;
             // 
             // BtnBuild
@@ -459,11 +460,22 @@ namespace Bingo_Card_Generator
             this.BtnFolder.UseVisualStyleBackColor = true;
             this.BtnFolder.Click += new System.EventHandler(this.BtnFolder_Click);
             // 
+            // BtnModify
+            // 
+            this.BtnModify.Location = new System.Drawing.Point(12, 290);
+            this.BtnModify.Name = "BtnModify";
+            this.BtnModify.Size = new System.Drawing.Size(157, 23);
+            this.BtnModify.TabIndex = 602;
+            this.BtnModify.Text = "Modify Tile";
+            this.BtnModify.UseVisualStyleBackColor = true;
+            this.BtnModify.Click += new System.EventHandler(this.BtnModify_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 579);
+            this.Controls.Add(this.BtnModify);
             this.Controls.Add(this.BtnFolder);
             this.Controls.Add(this.BtnBuild);
             this.Controls.Add(this.LstBingoTiles);
@@ -539,6 +551,7 @@ namespace Bingo_Card_Generator
         private System.Windows.Forms.ListBox LstBingoTiles;
         private System.Windows.Forms.Button BtnBuild;
         private System.Windows.Forms.Button BtnFolder;
+        private System.Windows.Forms.Button BtnModify;
     }
 }
 

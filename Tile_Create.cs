@@ -6,15 +6,25 @@ using System;
 namespace Bingo_Card_Generator
 {
     public partial class Tile_Create : Form
-    {
-        private string image_file;
-        
+    {        
         public Tile_Create()
+        {
+            Init();
+            CombDiff.SelectedItem = Diff_ENUM.Easy;
+        }
+        private void Init()
         {
             InitializeComponent();
             for (int i = 0; i < 5; i++)
                 CombDiff.Items.Add((Diff_ENUM)i);
-            CombDiff.SelectedItem = Diff_ENUM.Easy;
+        }
+        public Tile_Create(Tile tomod)
+        {
+            Init();
+            TbName.Text = tomod.Name;
+            RtbDesc.Text = tomod.Desc;
+            TbImage.Text = tomod.Image_Path;
+            CombDiff.SelectedItem = tomod.Difficulty;
         }
 
         private void BtnImageFind_Click(object sender, EventArgs e)
@@ -43,8 +53,7 @@ namespace Bingo_Card_Generator
                     return;
                 }
                 //Copies to local folder for use
-                TbImage.Text = ofd.FileName.Split("\\")[^1];
-                image_file = ofd.FileName;
+                TbImage.Text = ofd.FileName;
             }
             else MessageBox.Show("Image Selection Cancelled");
         }

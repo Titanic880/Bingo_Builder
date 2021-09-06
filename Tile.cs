@@ -61,9 +61,15 @@ namespace Bingo_Card_Generator
         {
             if(Img_bytes == null)
             {
-                Img_bytes = ImageToByteArray(new Bitmap(Json_Manager.Images_Folder_Name+Image_Path));
+                if(File.Exists(Image_Path))
+                    Img_bytes = ImageToByteArray(new Bitmap(Image_Path));
                 if (Img_bytes == null)
+                {
+                    StreamWriter sr = File.AppendText(Json_Manager.ERROR_FILE);
+                    sr.WriteLine($"TILE: ByteArrayToImage Method; IMAGE: '{Image_Path}' not Found");
+                    sr.Close();
                     return null;
+                }
                 else
                     Json_Manager.Replace_Tile(this);
 
